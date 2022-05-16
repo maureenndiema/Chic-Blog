@@ -122,4 +122,27 @@ class Comment(db.Model):
     blog_id = db.Column(db.Integer, db.ForeignKey("blogs.id",ondelete='SET NULL'), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id",ondelete='SET NULL'), nullable=True)
 
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def delete_comment(cls, id):
+        gone = Comment.query.filter_by(id=id).first()
+        db.session.delete(gone)
+        db.session.commit()
+
+    @classmethod
+    def get_comments(cls, id):
+        comments = Comment.query.filter_by(blog_id=id).all()
+        return comments
+
+    def __repr__(self):
+        return f'{self.blog_id}'
+
+class Subscriber(db.Model):
+    __tablename__ = "subscribers"
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(255), unique=True, index=True)
+
 
