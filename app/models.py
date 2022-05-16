@@ -89,3 +89,27 @@ class Upvote(db.Model):
     def __repr__(self):
         return f'{self.blog_id}'
 
+class Downvote(db.Model):
+    __tablename__ = 'downvotes'
+    id = db.Column(db.Integer, primary_key=True)
+    downvote = db.Column(db.Integer, default=1)
+    blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id', ondelete='SET NULL'), nullable=True)
+
+
+    def save_downvote(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def downvote(cls, id):
+        downvote_post = Downvote(user=current_user, pitch_id=id)
+        downvote_post.save_downvote()
+
+    @classmethod
+    def query_downvotes(cls, id):
+        downvote = Downvote.query.filter_by(pitch_id=id).all()
+        return downvote
+
+    def __repr__(self):
+        return f'{self.blog_id}'
+
+
