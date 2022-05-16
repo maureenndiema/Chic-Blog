@@ -15,3 +15,9 @@ class SubscriberModelTest(unittest.TestCase):
 
     def tearDown(self):
         Subscriber.query.delete()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.subscriber, Subscriber))
+
+    def test_check_instance_variables(self):
+        self.assertEquals(self.subscriber.email, 'mandi@gmail.com')
