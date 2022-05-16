@@ -1,0 +1,65 @@
+{% macro display(blogs) %}
+<div class="container">
+    {% if blogs %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="myCards">
+                {%for blog in blogs%}
+
+                <div class="cards" style="width:40rem; ">
+                    <div class="card-header">
+                        <h1 class="title">{{blog.title}} </h1>
+                    </div>
+
+                    <div class="card-body ">
+                        <p class="text-center blog">" {{blog.blog}} "<br>
+                            <span class="blockquote text-center "> ~ {{blog.user.username}}</span>
+
+
+                        </p>
+                        <p class="text-center">Posted on: {{blog.time.strftime('%Y-%m-%d')}}</p>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-xs-7">
+                                <a href="{{url_for( 'main.like',id=blog.id)}} ">
+                                    <i class="fa fa-thumbs-up " style="font-size:18px;color: green "></i>
+                                </a>
+                                {{blog.upvote.count()}} likes
+                                <a href="{{url_for( 'main.dislike',id=blog.id)}} ">
+                                    <i class="fa fa-thumbs-down " style="color:red; "></i> </a>
+                                {{blog.downvote.count()}} dislikes
+
+                            </div>
+                            <div class="col-xs-5" id="commentIcon">
+                                <a href="{{url_for( 'main.comment',id=blog.id)}} ">
+                                    <i class="fas fa-comment text-primary"></i>
+                                </a>
+                                {{blog.comment.count()}} comments
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <br style="clear: both">{%endfor%}
+
+            </div>
+
+        </div>
+
+    </div>
+    {% else %}
+    <div class="card w-90 mb-3  cardnoContent">
+        <div class="card-body ">
+
+            <p class="card-title ">There is no blog yet.Sign in to add a blog</p>
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>
+{% endmacro %}
