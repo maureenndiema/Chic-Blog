@@ -15,3 +15,17 @@
                     {% endif %}
                     <button class="btn" id="profileButton">update pic</button>
                 </div>
+
+                <div class="updateImg">
+                    {% if user == current_user %}
+                    <form class="updatePic" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+
+                        <input type="file" name="photo" class="form-control" required>
+                        <div class="form-group" id="btnSmall">
+                            <button type="submit" id="submit">Submit</button>
+
+                        </div>
+                    </form>
+                    {% endif %}
+                </div>
+                <hr>
