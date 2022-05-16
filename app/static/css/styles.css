@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+body {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('../image/');
+    scroll-behavior: smooth;
+    text-align: center;
+    color: #050505;
+    font-size: large;
+    font-weight: 400;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
