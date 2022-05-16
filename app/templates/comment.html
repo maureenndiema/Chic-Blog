@@ -1,0 +1,23 @@
+{% extends 'base.html'%} {% import 'bootstrap/wtf.html' as wtf %} {% block content %}
+<div class="container" id="allcomments">
+    <div class="row">
+        <div class="col-md-7">
+            {{wtf.quick_form(form)}}
+
+        </div>
+        {% if all_comments %}
+        <div class="col-md-5">
+            <h2 class="text-center" id="coms">All comments for this Blog :</h2>
+            {% for comment in all_comments %}
+            <div class="card w-90 mb-3 cardsComment">
+                <div class="card-body text-center">
+                    <span style="font-size:30px;"><p>{{ comment.comment }}</p></span>
+                    <p class="card-title" style="color:black;font-size:12px;">---by: {{comment.comment_by}}</p>
+                    <hr> {% if blog.user == current_user %}
+                    <div>
+                        <a href="{{url_for( 'main.delete_comment',id=blog.id,comment_id=comment.id)}} "><i class="fa fa-trash-alt text-danger"> Delete</i></a>
+                    </div>
+                    {% endif %}
+                </div>
+
+            </div>
