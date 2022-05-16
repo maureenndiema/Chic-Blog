@@ -10,3 +10,178 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.text{
+    font-weight: bolder;
+    color: white;
+}
+h6 {
+    font-style: italic;
+}
+  
+h5 {
+    font-style: italic;
+}
+  
+.container1 {
+      height: auto;
+      display: flex;
+      justify-content: center;
+}
+  
+.login-text{
+      font-family: 'Quicksand', sans-serif;
+}
+  
+  #login{
+  font-weight:bold;
+}
+  
+  #logo{
+  font-family: 'Special Elite', cursive;
+  color:#ed5107;
+  font-size:20px;
+}
+  #option-signup{
+    margin-top:20px;
+}
+    
+.navbar-inner {
+      background:white;
+ }
+    
+.division {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+    
+#centered-card{
+margin:0;
+padding:0;
+}
+    
+    
+#hellobutton {
+margin-top:20px;
+border: 0;
+background: orangered;
+width: 40px;
+height: 40px;
+box-shadow: #330808 0 0 20px;
+border-radius: 5px;
+color: white;
+font-size: 10px;
+justify-content: right;
+}
+#hellobutton:hover {
+    background: darkmagenta;
+}
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#buttons{
+display:flex;
+
+}
+.flex-stuff{
+    display:flex;
+}
+    
+#all{
+      color: rgb(241, 189, 16);
+      font-size: 18px;
+}
+#carded{
+      border-radius:25px 25px 0px 0px; 
+      background-color: rgb(12, 11, 11);
+      opacity: .7;
+      margin-bottom: 50px;
+      margin-top: 30px;
+}
+#posts{
+      color: rgb(233, 225, 225);
+      font-weight: bolder;
+      margin-top: 2%;
+      font-size: 40px;
+      font-family: 'Farro', sans-serif;
+}
+.pict{
+    margin-top: 2%;
+}
+
+.foot{
+  margin: 20px;
+  
+}
+#postform{
+  color: white;
+  margin-top: 3%;
+  background-color: rgba(209, 183, 183, 0.456);
+  padding:3%;
+  border-radius: 8px;
+  z-index: 1;
+}
+#login{
+  margin-top: 5%;
+  color: white;
+  background-color: rgba(209, 183, 183, 0.456);
+  border-radius: 8px;
+  padding:3%;
+}
+#sign{
+  color:rgb(247, 247, 247);
+  text-decoration: underline;
+  font-weight: bolder;
+}
+#coms{
+  color: rgb(245, 240, 240);
+}
+#allcomments{
+    padding-top: 2%;
+    border-radius: 10px;
+    height: 100%;
+    
+  }
+  .commentform{
+    color: rgb(221, 221, 233);
+    margin-top: 1%;
+  }
+  #user{
+    margin-top: 4%;
+    color: rgb(180, 5, 5);
+  }
+  .pitches{
+    background-color: rgb(235, 241, 241);
+    color: rgb(214, 218, 241);
+    padding: 2%;
+    border-radius: 8px;
+    margin-bottom: 1%;
+  }
+  .updateprofile{
+    margin-top: 5%;
+    color: rgb(14, 13, 13);
+  }
+  
+  .inside-nav{
+    margin-left: 20px;
+    list-style: none;
+  } 
+  /* .nav-link{
+    text-decoration: none;
+  } */
+  .nav-item{
+    list-style: none;
+  }
