@@ -112,4 +112,14 @@ class Downvote(db.Model):
     def __repr__(self):
         return f'{self.blog_id}'
 
+class Comment(db.Model):
+    __tablename__ = "comments"
+
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.String)
+    comment_at = db.Column(db.DateTime, nullable=False,default=datetime.utcnow)
+    comment_by = db.Column(db.String)
+    blog_id = db.Column(db.Integer, db.ForeignKey("blogs.id",ondelete='SET NULL'), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id",ondelete='SET NULL'), nullable=True)
+
 
