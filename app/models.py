@@ -38,3 +38,14 @@ class User (UserMixin, db.Model):
         return check_password_hash(self.pass_secure, password)
     def __repr__(self):
         return f'User {self.username}'
+
+class Blog(db.Model):
+    __tablename__ = 'blogs'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    time = db.Column(db.DateTime, nullable=False,default=datetime.utcnow)
+    blog = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='SET NULL'), nullable=True)
+    upvote = db.relationship('Upvote', backref='blog', lazy='dynamic')
+    downvote = db.relationship('Downvote', backref='blog', lazy='dynamic')
+    comment = db.relationship('Comment', backref='blog', lazy='dynamic')
