@@ -49,3 +49,19 @@ class Blog(db.Model):
     upvote = db.relationship('Upvote', backref='blog', lazy='dynamic')
     downvote = db.relationship('Downvote', backref='blog', lazy='dynamic')
     comment = db.relationship('Comment', backref='blog', lazy='dynamic')
+
+    def save_blog(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete_blog(self):
+        db.session.delete(self)
+        db.session.commit()
+
+
+    @classmethod
+    def get_all_blogs(cls):
+        return Blog.query.order_by(Blog.time.desc()).all()
+    
+    def __repr__(self):
+        return f'Blog {self.blog}'
