@@ -17,7 +17,6 @@ mail=Mail()
 simple = SimpleMDE()
 photos = UploadSet('photos', IMAGES)
 
-
 def create_app(config_name):
 
     #Initializing the application
@@ -35,6 +34,7 @@ def create_app(config_name):
     login_manager.init_app(app)
     mail.init_app(app)
     simple.init_app(app)
+
 
     # Registering the main blueprint
     from .main import main as main_blueprint
