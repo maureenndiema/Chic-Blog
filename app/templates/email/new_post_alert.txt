@@ -1,0 +1,2 @@
+Hi 
+A new blog! called " {{new_blog_object.title}} " has been uploaded.Visit My chic Blog to read

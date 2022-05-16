@@ -1,0 +1,2 @@
+Hello writer:: {{user.username}}
+Welcome to My Chic Blog We have just seen you have signed up for our application and want to welcome you to the family. Feel free to comment on blogs and educate us with your wisdom by posting chic blogs as well. Thank You. Enjoy!
