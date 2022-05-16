@@ -65,3 +65,11 @@ class Blog(db.Model):
     
     def __repr__(self):
         return f'Blog {self.blog}'
+
+class Upvote(db.Model):
+    __tablename__ = 'upvotes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    upvote = db.Column(db.Integer, default=1)
+    blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id', ondelete='SET NULL'), nullable=True)
+
