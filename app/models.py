@@ -73,3 +73,19 @@ class Upvote(db.Model):
     upvote = db.Column(db.Integer, default=1)
     blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id', ondelete='SET NULL'), nullable=True)
 
+    def save_upvote(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def upvote(cls, id):
+        upvote_post = Upvote(user=current_user, pitch_id=id)
+        upvote_post.save_upvote()
+
+    @classmethod
+    def query_upvotes(cls, id):
+        upvote = Upvote.query.filter_by(pitch_id=id).all()
+        return upvote
+
+    def __repr__(self):
+        return f'{self.blog_id}'
+
