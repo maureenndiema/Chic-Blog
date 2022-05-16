@@ -29,3 +29,41 @@
                     {% endif %}
                 </div>
                 <hr>
+                <div class="card-body" id="profileStatus">
+                    <p class="card-title">{{user.firstname}} {{user.lastname}}</p>
+                    <p class="card-subtitle text-muted"> Username: {{user.username}}</p>
+                    {% if user.bio %}
+                    <h2><i class="fas fa-quote-left"></i></h2>
+                    <p class="card-title"> {{user.bio}}</p>
+                    {%else%}
+                    <p class="card-title"> {{user.username| capitalize}} has no bio.</p>
+                    {% endif %}
+                    <div>
+                        <p class="linkUpdate"> {% if user == current_user %}
+                            <a href="{{url_for('main.update_profile',uname=user.username)}}"><i class="fa fa-edit text-primary">Edit Profile</i></a> {%endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5" id="profilePitch">
+            {% if current_user %}
+            <h2 class="text-center"> You have posted {{user.blogs.count()}} blogs </h2>
+            {% for blog in blogs%}
+            <div class="blogs">
+                <p>Title: {{blog.title}}</p>
+                <p class="blog"> " {{blog.blog}} "</p>
+                <p> Likes:{{blog.upvote.count()}}<br> Dislikes:{{blog.downvote.count()}}
+                    <br> Comments:{{blog.comment.count()}}
+                </p>
+                <a href="{{url_for('main.edit_blog', id = blog.id)}}"> <i class="fa fa-edit text-primary"> Edit</i></a>
+                <a href="{{url_for('main.delete_blog', id = user.id, blog_id = blog.id)}}"><i class="fa fa-trash-alt text-danger"> Delete</i></a>
+
+            </div>
+            <br> {%endfor%} {%endif%}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
