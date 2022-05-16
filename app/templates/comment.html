@@ -21,3 +21,18 @@
                 </div>
 
             </div>
+            {% endfor %}
+        </div>
+
+        {%else%}
+        <div class="card w-90 mb-3 cardsNoComment">
+            <div class="card-body">
+                <p class="card-title">No Comments for this blog yet. Be the first to comment</p>
+            </div>
+        </div>
+
+        {%endif%}
+    </div>
+    </div>
+
+    {% endblock%}
