@@ -22,12 +22,12 @@ class UpvoteModelTest(unittest.TestCase):
         User.query.delete()
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.upvote_vee, Upvote))
+        self.assertTrue(isinstance(self.upvote_moh, Upvote))
 
     def test_check_instance_variables(self):
-        self.assertEquals(self.upvote_vee.upvote, '2')
-        self.assertEquals(self.upvote_vee.blog, self.blog_vee)
+        self.assertEquals(self.upvote_moh.upvote, '2')
+        self.assertEquals(self.upvote_moh.blog, self.blog_moh)
 
     def test_save_upvote(self):
-        self.upvote_vee.save_upvote()
+        self.upvote_moh.save_upvote()
         self.assertTrue(len(Upvote.query.all()) > 0)
