@@ -43,3 +43,9 @@ def create_app(config_name):
     #Registering thr auth blueprint
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/authenticate')
+
+    # setting config
+    from .request import configure_request
+    configure_request(app)
+
+    return app
