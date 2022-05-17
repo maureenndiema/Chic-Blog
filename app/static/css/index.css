@@ -1,0 +1,182 @@
+body {
+    scroll-behavior: smooth;
+    background-image: url(../images/ocean.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'display';
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.header {
+    height: 70vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(253, 253, 253)), url('../images/heading.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.headerContents {
+    background-color: #f1f1f1cc;
+    border-radius: 20px;
+    margin-bottom: 4%;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 30px;
+}
+
+.welcome {
+    text-align: center;
+    float: center;
+}
+
+.welcome h2 {
+    font-size: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+hr {
+    border: dotted 2px black;
+}
+
+.header hr,
+#all hr {
+    border: solid 1px #f1f1f1cc;
+}
+
+#headingBlogs {
+    background-color: #f1f1f1cc;
+    font-weight: bold;
+}
+
+form {
+    margin-top: 5%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #f1f1f1cc;
+    box-shadow: 0 0 20px 0 rgb(32, 6, 16);
+    float: center;
+    margin-bottom: 10%;
+    align-items: center;
+    font-size: 16px;
+    font-style: bold;
+}
+
+input#submit.btn:hover {
+    background-color: rgba(165, 42, 89, 0.8) !important;
+}
+
+.subscribeForm {
+    text-align: center;
+}
+
+.subscribeForm form {
+    margin-top: 0.5%;
+    width: 50%;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(236, 16, 101);
+    margin-bottom: 5%;
+    align-items: center;
+    height: fit-content;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.updateImg form {
+    width: 70%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input#submit.btn {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: rgba(236, 16, 101, 0.8);
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    float: center !important;
+}
+
+.subscribeForm input#submit.btn {
+    width: 30%;
+    padding-left: 10px;
+    padding: 5px;
+}
+
+.form-check-label {
+    color: white;
+}
+
+textarea.form-control,
+input.form-control {
+    background-color: white;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.subscribeForm input.form-control {
+    width: 60%;
+    padding: 5px;
+    padding-left: 3px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control:hover,
+.form-check-label:hover,
+input:hover::placeholder {
+    color: rgba(236, 16, 101);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 6px 0 rgba(236, 16, 101);
+    color: rgba(236, 16, 101);
+}
+
+label.control-label {
+    font-size: 20px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.accountDets {
+    background-color: #f1f1f1cc;
+    border-radius: 20px;
+}
+
+.btn {
+    background: rgb(236, 16, 101);
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#btnSmall button {
+    background: rgb(236, 16, 101);
+    font-size: 10px;
+    align-items: center;
+    height: 30px;
+    border-radius: 5px;
+}

@@ -1,0 +1,80 @@
+.myCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cards,
+.cardnoContent {
+    color: white;
+    background-color: rgb(236, 16, 101, 0.8);
+    border-radius: 6px;
+    margin-bottom: 4%;
+    font-size: 16px;
+    box-shadow: 0 0 20px 0 #f1f1f1cc;
+}
+
+.card-header {
+    border-bottom: 2px solid black;
+}
+
+.subtitle {
+    font-size: 16px;
+}
+
+.card-body {
+    font-family: 'fantasy';
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}
+
+.card-footer {
+    color: black;
+    font-size: 16px;
+}
+
+.commentIcon {
+    float: right;
+}
+
+.fa-thumbs-down,
+.fa-trash-alt {
+    padding-left: 10px;
+}
+
+.cardsComment,
+.cardsNoComment,
+.cardsProfile {
+    color: black;
+    background-color: rgb(236, 16, 101, 0.4);
+    border-radius: 6px;
+    margin-bottom: 4%;
+    font-size: 16px;
+    box-shadow: 0 0 20px 0 grey;
+}
+
+.cardsNoComment {
+    margin-top: 3%;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.cardsProfile {
+    text-align: center;
+    width: 60%;
+}
+
+.blogs {
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.blog {
+    font-style: italic;
+    font-size: 20px;
+}

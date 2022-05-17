@@ -1,6 +1,7 @@
 import urllib.request,json
 from .models import Quote
 import requests
+from config import Config
 
 #Getting the quotes base url
 base_url = None

@@ -11,7 +11,7 @@ class DownvoteModelTest(unittest.TestCase):
         """
         Set up method that will run before every Test
         """
-        self.user_Moh = User(username='Mandi',password='1234', email='mandi@gmail.com')
+        self.user_Moh = User(username='maureen',password='1234', email='mandi@gmail.com')
         self.blog_Moh = Blog(title='love', blog='This is the ghetto', user=self.user_Moh)
         self.downvote_moh = Downvote(downvote='8', blog=self.blog_moh)
 

@@ -1,0 +1,48 @@
+nav {
+    margin-top: 0.5%;
+    background-color: rgba(236, 16, 101, 0.8);
+    font-family: 'display';
+    color: black;
+    margin-left: 0.2%;
+    margin-right: 0.2%;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.nav-item {
+    font-size: 20px;
+}
+
+#items {
+    margin-left: 60%;
+}
+
+.navbar-brand {
+    margin-left: 1%;
+    margin-right: 5%;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+a.dropdown-item {
+    font-size: 15px !important;
+}
+
+a.dropdown-item:hover {
+    background-color: black !important;
+    color: white;
+}
+
+a.nav-link:hover {
+    background-color: rgba(236, 16, 101) !important;
+}
+
+a.nav-link {
+    padding-left: 10%;
+}
+
+@media screen and (min-width:600px) {}
