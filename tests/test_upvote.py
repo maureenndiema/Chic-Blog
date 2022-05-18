@@ -11,8 +11,8 @@ class UpvoteModelTest(unittest.TestCase):
         """
         Set up method that will run before every Test
         """
-        self.user_Moh = User(username='maureen',password='1234', email='mandi@gmail.com')
-        self.blog_moh = Blog(title='love', blog='This is the ghetto', user=self.user_Moh)
+        self.user_Moh = User(username='mandi',password='1234', email='mandi@gmail.com')
+        self.blog_moh = Blog(title='fashion', blog='Life is too short to wear boring clothes!', user=self.user_Moh)
 
         self.upvote_moh = Upvote(upvote='2', blog=self.blog_moh)
 

@@ -12,7 +12,7 @@ class BlogModelTest(unittest.TestCase):
         Set up method that will run before every Test
         """
         self.user_Moh = User(username='maureen',password='1234', email='mandi@gmail.com')
-        self.blog = Blog(title='Monday', blog='This is the ghetto', user=self.user_Moh)
+        self.blog = Blog(title='Fashion', blog='Life is too short to wear boring clothes!', user=self.user_Moh)
 
     def tearDown(self):
         Blog.query.delete()
@@ -22,8 +22,8 @@ class BlogModelTest(unittest.TestCase):
         self.assertTrue(isinstance(self.blog, Blog))
 
     def test_check_instance_variables(self):
-        self.assertEquals(self.blog.title, 'Monday')
-        self.assertEquals(self.blog.blog, 'This is the ghetto')
+        self.assertEquals(self.blog.title, 'Fashion')
+        self.assertEquals(self.blog.blog, 'Life is too short to wear boring clothes!')
         self.assertEquals(self.blog.user, self.user_Moh)
 
     def test_save_blog(self):

@@ -1,4 +1,4 @@
-from flask import render_template,request,redirect,url_for,abort
+from flask import render_template,request,redirect,url_for,abort,flash
 from . import main
 from ..request import get_quotes
 from ..models import Quote,User,Blog,Upvote,Downvote,Comment,Subscriber
@@ -127,13 +127,13 @@ def comment(id):
 
 
 
-@main.route("/blog/<int:id>/<int:comment_id>/delete")
-def delete_comment(id, comment_id):
-    blog = Blog.query.filter_by(id = id).first()
-    comment = Comment.query.filter_by(id = comment_id).first()
-    db.session.delete(comment)
-    db.session.commit()
-    return redirect(url_for("main.comment", id = blog.id))
+# @main.route("/blog/<int:id>/<int:comment_id>/delete")
+# def delete_comment(id, comment_id):
+#     blog = Blog.query.filter_by(id = id).first()
+#     comment = Comment.query.filter_by(id = comment_id).first()
+#     db.session.delete(comment)
+#     db.session.commit()
+#     return redirect(url_for("main.comment", id = blog.id))
 
 
 @main.route("/blog/<int:id>/update", methods=["POST", "GET"])
@@ -161,5 +161,21 @@ def delete_blog(id, blog_id):
     db.session.commit()
     return redirect(url_for("main.profile", uname=user.username))    
 
+@main.route('/blog/<blog_id>/delete', methods = ['POST'])
+def delete_post(blog_id):
+    blog = Blog.query.get(blog_id)
+    if blog.user != current_user:
+        abort(403)
+    blog.delete()
 
+    flash("You have deleted your Blog succesfully!")
+    return redirect(url_for('main.blog'))
 
+@main.route("/delete_comment/<int:id>")
+@login_required
+def delete_comment(id):
+    comment = Comment.query.get(id)
+    db.session.delete(comment)
+    db.session.commit()
+
+    return redirect(url_for('main.index'))

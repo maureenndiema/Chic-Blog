@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, ValidationError, HiddenField
+from wtforms import StringField, TextAreaField, SubmitField, ValidationError, HiddenField,SelectField
 from wtforms.validators import DataRequired, Email
 from ..models import Subscriber
 
@@ -12,6 +12,7 @@ class UpdateProfile(FlaskForm):
 
 class BlogForm(FlaskForm):
     title = StringField('Title :', validators=[DataRequired()])
+    category = SelectField('Category', choices=[('Fashion blog','Fashion blog'),('Travel Blog','Travel Blog'),('Food blog','Food blog')],validators=[DataRequired()])
     blog = TextAreaField('Your Blog :', validators=[DataRequired()])
     submit = SubmitField('Blog')
 
